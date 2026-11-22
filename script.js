@@ -2,13 +2,6 @@
 const SUPABASE_URL = "https://fptgficzjkfaeafsweeg.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwdGdmaWN6amtmYWVhZnN3ZWVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUzNDM4NDMsImV4cCI6MjExMDkxOTg0M30.Yfv_W2Yzq7A54lMiBiUkBI4wooXQLQL_OKd950x4Wcs";
 
-const supabaseClient = (window.supabase && SUPABASE_URL.startsWith("https://"))
-    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-    : null;
-
-// Current rating global state
-let selectedRating = 5;
-
 // Page Switch Logic (Toggles active HTML page view seamlessly)
 function switchPage(pageId) {
     const files = {
@@ -76,16 +69,19 @@ function setRating(rating) {
     }
 }
 
-// Format Timestamp nicely
-function formatCommentDate(isoString) {
-    if (!isoString) return 'Just now';
-    const date = new Date(isoString);
-    if (Number.isNaN(date.getTime())) return 'Just now';
-    return date.toLocaleDateString('en-MY', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
-    });
+// LocalStorage Comment Helpers
+function getSavedComments() {
+    try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch {
+        return [];
+    }
+}
+
+function saveCommentToStorage(commentObj) {
+    const comments = getSavedComments();
+    comments.unshift(commentObj);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
 }
 
 function renderCommentCard(commentObj) {
@@ -106,8 +102,6 @@ function renderCommentCard(commentObj) {
         .substring(0, 2)
         .toUpperCase() || 'VT';
 
-    const timeDisplay = commentObj.timeLabel || formatCommentDate(commentObj.created_at);
-
     const commentCard = document.createElement('div');
     commentCard.className = 'p-5 rounded-3xl bg-white border-2 border-dustyPink/40 shadow-cute space-y-2 animate-bounce-short';
     commentCard.innerHTML = `
@@ -118,7 +112,7 @@ function renderCommentCard(commentObj) {
                 </div>
                 <div>
                     <h4 class="font-heading font-bold text-sm text-darkBrown">${escapeHtml(commentObj.name)}</h4>
-                    <span class="text-[10px] text-darkBrown/50">${escapeHtml(timeDisplay)}</span>
+                    <span class="text-[10px] text-darkBrown/50">${escapeHtml(commentObj.timeLabel || 'Just now')}</span>
                 </div>
             </div>
             <div class="text-amber-400 text-xs">
@@ -132,91 +126,71 @@ function renderCommentCard(commentObj) {
     return commentCard;
 }
 
-// Load All Public Comments from Supabase
-async function loadSavedComments() {
+function loadSavedComments() {
     const commentsList = document.getElementById('commentsList');
-    if (!commentsList || !supabaseClient) return;
-
-    const { data, error } = await supabaseClient
-        .from('comments')
-        .select('id, name, message, rating, created_at')
-        .order('created_at', { ascending: false });
-
-    if (error) {
-        console.error('Error loading comments:', error);
-        return;
-    }
-
-    commentsList.innerHTML = '';
-    (data || []).forEach(item => {
+    if (!commentsList) return;
+    const saved = getSavedComments();
+    saved.forEach(item => {
         commentsList.appendChild(renderCommentCard(item));
     });
-
     const countElem = document.getElementById('commentCount');
     if (countElem) {
-        countElem.textContent = (data || []).length;
+        countElem.textContent = saved.length;
     }
 }
 
-// Form Submission Handler (Saves to Supabase + Sends Email via Web3Forms)
+// Form Submission Handler (Live Dynamic Comment Addition + LocalStorage + Web3Forms Email)
 async function handleCommentSubmit(event) {
     event.preventDefault();
     const form = document.getElementById('commentForm');
-    const name = document.getElementById('visitorName').value.trim();
-    const message = document.getElementById('visitorMessage').value.trim();
+    const name = document.getElementById('visitorName').value;
+    const email = document.getElementById('visitorEmail').value;
+    const message = document.getElementById('visitorMessage').value;
 
-    if (!name || !message) return;
-
-    // 1. Save comment to Supabase cloud database
-    let savedToCloud = false;
-    if (supabaseClient) {
-        const { error } = await supabaseClient
-            .from('comments')
-            .insert([{
-                name: name,
-                message: message,
-                rating: selectedRating
-            }]);
-        savedToCloud = !error;
-        if (error) console.error('Supabase insert error:', error);
-    }
-
-    // Render immediately on screen
-    const commentCard = renderCommentCard({
+    const newComment = {
         name,
+        email,
         message,
         rating: selectedRating,
         timeLabel: 'Just now'
-    });
+    };
+
+    const commentCard = renderCommentCard(newComment);
     const commentsList = document.getElementById('commentsList');
     if (commentsList) {
         commentsList.prepend(commentCard);
     }
 
+    saveCommentToStorage(newComment);
+
+    // Update comment count if element exists
     const countElem = document.getElementById('commentCount');
     if (countElem) {
         countElem.textContent = (parseInt(countElem.textContent, 10) || 0) + 1;
     }
 
-    // 2. Send email notification via Web3Forms
+    // Send email notification via Web3Forms
+    let emailSent = false;
     if (form) {
         const formData = new FormData(form);
         try {
-            await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData
             });
+            const data = await response.json();
+            emailSent = Boolean(data.success);
         } catch (err) {
-            console.error('Web3Forms error:', err);
+            emailSent = false;
         }
         form.reset();
         setRating(5);
     }
 
-    if (savedToCloud) {
-        showToast("Thank you " + name + "! Your comment is live for everyone.");
+    if (emailSent) {
+        showToast("Thank you " + name + "! Comment published & emailed.");
     } else {
-        showToast("Comment submitted, but could not sync to cloud.");
+        showToast("Thank you " + name + "! Comment saved (email pending/check key).");
     }
 }
 
@@ -237,7 +211,7 @@ function showToast(text) {
 
 // Escape HTML for security
 function escapeHtml(str) {
-    return String(str).replace(/&/g, "&amp;")
+    return str.replace(/&/g, "&amp;")
               .replace(/</g, "&lt;")
               .replace(/>/g, "&gt;")
               .replace(/"/g, "&quot;")
