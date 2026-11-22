@@ -1,0 +1,85 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #FFF9F2;
+    color: #44333D;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Floating Badge Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(-4deg); }
+}
+
+.animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Sparkle Pulse */
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFF9F2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E8A0BF;
+    border-radius: 999px;
+    border: 2px solid #FFF9F2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D96C9D;
+}
+
+/* Glassmorphism card backdrops */
+.glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(232, 160, 191, 0.3);
+}
+
+/* Page transition smoothness */
+.page-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Code modal scroll styling */
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

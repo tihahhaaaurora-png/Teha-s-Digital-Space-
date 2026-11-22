@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   My Biodata &mdash; Teha's Space
+  </title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"> </script>
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts: Fredoka & Quicksand for a professional yet cute vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  
+  <script>
+   tailwind.config = { theme: { extend: { colors: { cream: '#FFF9F2', dustyPink: '#E8A0BF', lavender: '#DCD6F7', darkBrown: '#44333D', rosePink: '#D96C9D', softPinkBg: '#FDF0F5', accentYellow: '#FFE5AD' }, fontFamily: { fredoka: ['Fredoka', 'sans-serif'], quicksand: ['Quicksand', 'sans-serif'], }, 
+   boxShadow: { 'cute': '0 10px 25px -5px rgba(217, 108, 157, 0.15), 0 8px 10px -6px rgba(220, 214, 247, 0.2)', 'cute-hover': '0 20px 30px -10px rgba(217, 108, 157, 0.3), 0 10px 15px -5px rgba(232, 160, 191, 0.4)', 'pop': '4px 4px 0px 0px #44333D', 'pop-hover': '6px 6px 0px 0px #44333D', } } } }
+ </script>
+  <link rel="stylesheet" href="css/style.css">
+ </head>
+ 
+ <body class="min-h-screen flex flex-col justify-between selection:bg-dustyPink selection:text-white">
+  <div class="bg-gradient-to-r from-dustyPink via-rosePink to-lavender text-white text-xs sm:text-sm font-medium py-1.5 px-4 text-center tracking-wide shadow-sm flex items-center justify-center gap-2">
+   <span class="animate-bounce">
+   </span>
+   Welcome to Teha's Digital Space! 
+   <span class="bg-white/20 px-2 py-0.5 rounded-full text-[11px] font-semibold hidden sm:inline-block">
+    2026 Edition
+   </span>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b-2 border-dustyPink/20 transition-all duration-300">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+     <!-- Logo / Brand -->
+     <a class="flex items-center gap-3 group" href="index.html">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rosePink to-dustyPink flex items-center justify-center text-white text-xl shadow-cute transition-transform group-hover:scale-110 group-hover:rotate-6">
+       <i class="fa-solid font-bold fa-sparkles">
+       </i>
+      </div>
+      <div>
+       <span class="font-heading text-xl font-bold tracking-tight text-darkBrown group-hover:text-rosePink transition-colors">
+        Teha's Space
+       </span>
+       <span class="text-xs text-rosePink/80 font-bold block -mt-1 tracking-wider uppercase">
+        Portfolio
+       </span>
+      </div>
+     </a>
+     <!-- Desktop Navigation Menu -->
+     <nav class="hidden md:flex items-center gap-1.5 bg-white/80 p-1.5 rounded-full border-2 border-dustyPink/30 shadow-sm">
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-rosePink bg-softPinkBg shadow-sm" href="index.html" id="nav-homepage">
+       <i class="fa-solid fa-house mr-1.5 text-xs">
+       </i>
+       Home
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-rosePink bg-softPinkBg shadow-sm" href="biodata.html" id="nav-biodata">
+       <i class="fa-solid fa-user-heart mr-1.5 text-xs">
+       </i>
+       My Biodata
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="portfolio.html" id="nav-portfolio">
+       <i class="fa-solid fa-folder-open mr-1.5 text-xs">
+       </i>
+       My Portfolio
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="video.html" id="nav-video">
+       <i class="fa-solid fa-circle-play mr-1.5 text-xs">
+       </i>
+       My Video
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="comments.html" id="nav-comments">
+       <i class="fa-solid fa-comments mr-1.5 text-xs">
+       </i>
+       Your Comments
+      </a>
+     </nav>
+     <!-- Right Action Button & Mobile Menu Toggle -->
+     <div class="flex items-center gap-2">
+      <!-- Code View Toggle Button for Assignment Reviewers -->
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2.5 rounded-xl bg-white text-darkBrown border-2 border-dustyPink/30 hover:bg-softPinkBg focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+       <i class="fa-solid fa-bars text-lg" id="menu-icon">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- Mobile Navigation Drawer -->
+   <div class="hidden md:hidden bg-cream border-b-2 border-dustyPink/30 px-4 pt-2 pb-6 space-y-2 shadow-lg" id="mobile-menu">
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-rosePink bg-softPinkBg" href="index.html">
+     <i class="fa-solid fa-house text-rosePink w-6">
+     </i>
+     Homepage
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-rosePink bg-softPinkBg" href="biodata.html">
+     <i class="fa-solid fa-id-card text-rosePink w-6">
+     </i>
+     My Biodata &amp; Timetable
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="portfolio.html">
+     <i class="fa-solid fa-briefcase text-rosePink w-6">
+     </i>
+     My Portfolio
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="video.html">
+     <i class="fa-solid fa-video text-rosePink w-6">
+     </i>
+     My Video
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="comments.html">
+     <i class="fa-solid fa-comment-dots text-rosePink w-6">
+     </i>
+     Your Comments
+    </a>
+   </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+ 
+   <section class="" id="page-biodata">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+     <span class="px-3 py-1 rounded-full bg-lavender/60 text-purple-800 font-bold text-xs uppercase tracking-widest">
+      Get to know me
+     </span>
+     <h2 class="text-3xl sm:text-4xl font-bold text-darkBrown mt-2">
+      My Biodata &amp; Profile
+     </h2>
+     <p class="text-sm text-darkBrown/75 mt-1">
+      A detailed overview of my background, skills, interests, and academic timetable.
+     </p>
+    </div>
+
+    <!-- Profile Overview & Personal Info Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <!-- Quick Info Card -->
+<div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border-2 border-dustyPink/40 shadow-cute">
+    
+    <!-- Top Center Profile Section -->
+    <div class="flex flex-col items-center text-center pb-6 border-b border-dustyPink/20">
+        <!-- Bigger Centered Picture -->
+        <div class="w-32 h-32 rounded-3xl overflow-hidden border-2 border-rosePink shadow-md flex items-center justify-center bg-softPinkBg mb-4">
+            <img src="image/teha.jpg" class="w-full h-full object-cover">
+        </div>
+        <!-- Name and Title -->
+        <div>
+            <h3 class="font-heading text-xl font-bold text-darkBrown">
+                NUR FATIHAH BINTI MUSTARI
+            </h3>
+            <p class="text-xs text-rosePink font-semibold mt-1">
+                Multimedia Student
+            </p>
+        </div>
+    </div>
+
+    <!-- Details List Below -->
+    <div class="mt-6 space-y-4 text-sm">
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-softPinkBg/60">
+            <i class="fa-solid fa-cake-candles text-rosePink w-5 text-center"></i>
+            <div>
+                <span class="text-xs text-darkBrown/60 block font-semibold">
+                    Age / Birthday
+                </span>
+                <span class="font-bold text-darkBrown">
+                    21 Years Old (18/02/2005)
+                </span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-softPinkBg/60">
+            <i class="fa-solid fa-map text-rosePink w-5 text-center"></i>
+            <div>
+                <span class="text-xs text-darkBrown/60 block font-semibold">
+                    Origin
+                </span>
+                <span class="font-bold text-darkBrown">
+                    Sandakan, Sabah
+                </span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-lavender/40">
+            <i class="fa-solid fa-graduation-cap text-purple-600 w-5 text-center"></i>
+            <div>
+                <span class="text-xs text-darkBrown/60 block font-semibold">
+                    Field of Study
+                </span>
+                <span class="font-bold text-darkBrown">
+                    Bachelor's Degree of Information Technology [Multimedia]
+                </span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-amber-50">
+            <i class="fa-solid fa-location-dot text-amber-600 w-5 text-center"></i>
+            <div>
+                <span class="text-xs text-darkBrown/60 block font-semibold">
+                    Location
+                </span>
+                <span class="font-bold text-darkBrown">
+                    Universiti Malaysia Sabah Kampus Antarabangsa Labuan
+                </span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50">
+            <i class="fa-solid fa-envelope text-emerald-600 w-5 text-center"></i>
+            <div>
+                <span class="text-xs text-darkBrown/60 block font-semibold">
+                    Email Contact
+                </span>
+                <span class="font-bold text-darkBrown">
+                    nur_fatihah_bi24@iluv.ums.edu.my / tihahhaaaurora@gmail.com
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- Education Timeline & Hobbies -->
+     <div class="lg:col-span-7 space-y-8">
+      <!-- Education Timeline Card -->
+      <div class="bg-white p-6 rounded-3xl border-2 border-lavender/60 shadow-cute">
+       <h3 class="font-heading text-lg font-bold text-darkBrown mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-clock-rotate-left text-rosePink">
+        </i>
+        Educational Journey
+       </h3>
+       <div class="relative border-l-2 border-dustyPink/40 ml-4 space-y-6">
+        <!-- Timeline Item 1 -->
+        <div class="relative pl-6">
+         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rosePink border-2 border-white">
+         </span>
+         <span class="text-xs font-bold text-rosePink bg-softPinkBg px-2 py-0.5 rounded-md">
+          2024 - Present
+         </span>
+         <h4 class="font-heading text-base font-bold text-darkBrown mt-1">
+          Bachelor's Degree of Information Technology [Multimedia] 
+         </h4>
+         <p class="text-xs text-darkBrown/70">
+          Specializing in Video Production, Web Programming and UI/UX Design. <br>
+          <strong> CGPA:3.57 </strong>
+         </p>
+        </div>
+        <!-- Timeline Item 2 -->
+        <div class="relative pl-6">
+         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-dustyPink border-2 border-white"></span>
+         <span class="text-xs font-bold text-purple-700 bg-lavender/50 px-2 py-0.5 rounded-md">
+          2023-2024
+         </span>
+         <h4 class="font-heading text-base font-bold text-darkBrown mt-1">
+          Kolej Matrikulasi Labuan (KML)
+         </h4>
+         <p class="text-xs text-darkBrown/70">
+          Graduated from the Matriculation Programme Major in Science Computer. <br>
+          <strong>CGPA: 3.34</strong>
+         </p>
+        </div>
+         <!-- Timeline Item 3 -->
+        <div class="relative pl-6">
+         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-dustyPink border-2 border-white"></span>
+         <span class="text-xs font-bold text-purple-700 bg-lavender/50 px-2 py-0.5 rounded-md">
+          2022
+         </span>
+         <h4 class="font-heading text-base font-bold text-darkBrown mt-1">
+          Sijil Pelajaran Malayisa (SPM)
+         </h4>
+         <p class="text-xs text-darkBrown/70">
+          Graduated with High Distinction (Pure Science Stream). <br>
+          <strong>5As 1B 3Cs</strong>
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="p-6 sm:p-8 rounded-3xl bg-white border-2 border-dustyPink/40 shadow-cute space-y-6">
+    
+    <!-- Header Title -->
+    <h3 class="font-heading font-bold text-lg text-darkBrown flex items-center gap-2"> Skills &amp; Hobbies</h3>
+
+    <!-- TECHNICAL -->
+    <div class="space-y-2">
+        <h4 class="text-xs font-bold tracking-wider text-darkBrown/60 uppercase">Technical</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">HTML &amp; CSS</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-lavender/50 text-purple-700 border border-lavender">JavaScript</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">Web Development</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">AR Development</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">Blender</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-lavender/50 text-purple-700 border border-lavender">OpenGL</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">DBMS</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OOP</span>
+        </div>
+    </div>
+
+    <!-- CREATIVE -->
+    <div class="space-y-2">
+        <h4 class="text-xs font-bold tracking-wider text-darkBrown/60 uppercase">Creative</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">UI/UX</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-lavender/50 text-purple-700 border border-lavender">Multimedia</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">Video Production</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">3D Animation</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">Visual Design</span>
+        </div>
+    </div>
+
+    <!-- LEADERSHIP -->
+    <div class="space-y-2">
+        <h4 class="text-xs font-bold tracking-wider text-darkBrown/60 uppercase">Leadership</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">Student Leadership</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-lavender/50 text-purple-700 border border-lavender">Event Management</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">Public Speaking</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Teamwork</span>
+        </div>
+    </div>
+
+    <!-- PROFESSIONAL -->
+    <div class="space-y-2">
+        <h4 class="text-xs font-bold tracking-wider text-darkBrown/60 uppercase">Professional</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">Problem-Solving</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-lavender/50 text-purple-700 border border-lavender">Critical Thinking</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">Adaptability</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Communication</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">Self-Learning</span>
+        </div>
+    </div>
+
+    <!-- Thin Divider -->
+    <hr class="border-t border-dustyPink/20 my-4">
+
+    <!-- HOBBIES -->
+    <div class="space-y-2">
+        <h4 class="font-heading font-bold text-sm text-darkBrown flex items-center gap-2">Hobbies</h4>
+        <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-softPinkBg text-rosePink border border-dustyPink/30">Graphic Design</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-lavender/50 text-purple-700 border border-lavender">Photography</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">Digital Reading</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Music</span>
+        </div>
+    </div>
+</div>
+      </div>
+     </div>
+    </div>
+    <!-- MANDATORY REQUIREMENT: TIMETABLE -->
+<div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-dustyPink/40 shadow-cute">
+
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
+        <div>
+            <span class="px-3 py-1 rounded-full bg-softPinkBg text-rosePink font-bold text-xs uppercase">
+                Weekly Schedule
+            </span>
+            <h3 class="font-heading text-2xl font-bold text-darkBrown mt-1">
+                My Class for Sem 1 2026/2027
+            </h3>
+        </div>
+
+        <span class="text-xs font-semibold text-darkBrown/60 bg-cream px-3 py-1.5 rounded-xl border border-dustyPink/30">
+            <i class="fa-regular fa-calendar-days text-rosePink mr-1"></i>
+            Academic Term 2026
+        </span>
+    </div>
+
+    <!-- Responsive Scrollable Table -->
+    <div class="overflow-x-auto rounded-2xl border-2 border-dustyPink/30">
+
+        <table class="w-full text-left border-collapse min-w-[750px]">
+
+            <thead>
+                <tr class="bg-gradient-to-r from-dustyPink/40 via-lavender/40 to-softPinkBg text-darkBrown font-heading text-sm">
+                    <th class="p-3.5 border-b-2 border-dustyPink/30">Day / Time</th>
+                    <th class="p-3.5 border-b-2 border-dustyPink/30">08:00 AM - 10:00 AM</th>
+                    <th class="p-3.5 border-b-2 border-dustyPink/30">11:00 AM - 01:00 PM</th>
+                    <th class="p-3.5 border-b-2 border-dustyPink/30">02:00 PM - 04:00 PM</th>
+                </tr>
+            </thead>
+
+            <tbody class="text-xs font-medium text-darkBrown divide-y divide-dustyPink/20">
+
+                <!-- MONDAY -->
+                <tr class="hover:bg-softPinkBg/40 transition-colors">
+                    <td class="p-3.5 font-bold font-heading bg-cream/80 text-rosePink">
+                        Monday
+                    </td>
+                    <td class="p-3.5">
+                        <span class="bg-softPinkBg text-rosePink px-2.5 py-1.5 rounded-lg font-semibold block border border-dustyPink/30">
+                            Web Multimedia
+                        </span>
+                    </td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                </tr>
+
+                <!-- TUESDAY -->
+                <tr class="hover:bg-softPinkBg/40 transition-colors">
+                    <td class="p-3.5 font-bold font-heading bg-cream/80 text-rosePink">
+                        Tuesday
+                    </td>
+                    <td colspan="3" class="p-3.5 text-center">
+                        <span class="bg-lavender/30 text-purple-700 px-4 py-2 rounded-lg font-semibold block border border-lavender">
+                            <i class="fa-solid fa-book-open mr-1"></i>
+                            Self-study day — Time to revise, practise and catch up on my studies!
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- WEDNESDAY -->
+                <tr class="hover:bg-softPinkBg/40 transition-colors">
+                    <td class="p-3.5 font-bold font-heading bg-cream/80 text-rosePink">
+                        Wednesday
+                    </td>
+                    <td class="p-3.5">
+                        <span class="bg-lavender/40 text-purple-700 px-2.5 py-1.5 rounded-lg font-semibold block border border-lavender">
+                            Computer Graphics
+                        </span>
+                    </td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                </tr>
+
+                <!-- THURSDAY -->
+                <tr class="hover:bg-softPinkBg/40 transition-colors">
+                    <td class="p-3.5 font-bold font-heading bg-cream/80 text-rosePink">
+                        Thursday
+                    </td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                    <td class="p-3.5">
+                        <span class="bg-amber-50 text-amber-800 px-2.5 py-1.5 rounded-lg font-semibold block border border-amber-200">
+                            Augmented Reality
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- FRIDAY -->
+                <tr class="hover:bg-softPinkBg/40 transition-colors">
+                    <td class="p-3.5 font-bold font-heading bg-cream/80 text-rosePink">
+                        Friday
+                    </td>
+                    <td class="p-3.5">
+                        <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1.5 rounded-lg font-semibold block border border-emerald-200">
+                            Principles of Accounting
+                        </span>
+                    </td>
+                    <td class="p-3.5 text-darkBrown/40 italic">-</td>
+                    <td class="p-3.5">
+                        <span class="bg-emerald-50 text-emerald-800 px-2.5 py-1.5 rounded-lg font-semibold block border border-emerald-200">
+                            Cyber Security
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+   </section>
+   
+  </main>
+  <footer class="bg-white border-t-2 border-dustyPink/20 mt-16 py-8">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Left Side: Logo + Title Description -->
+        <div class="flex items-center gap-4 text-center sm:text-left">
+            <!-- UMS Logo Image -->
+            <img src="image\ums.jpeg" class="w-12 h-12 object-contain">
+            
+        <div>
+         <p class="font-heading font-bold text-darkBrown text-base"> Teha's Digital Space </p>
+     <p class="text-xs text-darkBrown/60"> Designed &amp; Coded for Personal Page Development &bull; Multimedia Web Programming</p>
+            </div>
+        </div>
+    <div class="flex items-center gap-3">
+    
+    <!-- 1. LinkedIn Link -->
+    <a class="w-9 h-9 rounded-full bg-softPinkBg text-rosePink flex items-center justify-center hover:bg-rosePink hover:text-white transition-colors" href="https://www.linkedin.com/in/nur-fatihah-binti-mustari-4a1b8a414?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in text-sm"></i>
+    </a>
+
+    <!-- 2. Instagram Link -->
+    <a class="w-9 h-9 rounded-full bg-lavender/50 text-purple-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors" href="https://www.instagram.com/pingkekosmos?exln=MXFzbTNwZ3Y5a244Zw%3D%3D&utm_source=qr" target="_blank" title="Instagram">
+        <i class="fa-brands fa-instagram text-sm"></i>
+    </a>
+
+    <!-- 3. Direct Email Link -->
+    <a class="w-9 h-9 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-colors" href="mailto:nur_fatihah_bi24@iluv.ums.edu.my" title="Email Me">
+        <i class="fa-solid fa-envelope text-sm"></i>
+    </a>
+
+</div>
+   </div>
+  </footer>
+  <div class="fixed inset-0 bg-darkBrown/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="projectModal">
+   <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full border-2 border-dustyPink shadow-2xl space-y-4 relative transform transition-all">
+    <button class="absolute top-4 right-4 text-darkBrown/50 hover:text-rosePink text-lg" onclick="closeModal()">
+     <i class="fa-solid fa-xmark">
+     </i>
+    </button>
+    <h3 class="font-heading text-2xl font-bold text-darkBrown" id="modalTitle">
+     Project Title
+    </h3>
+    <p class="text-xs sm:text-sm text-darkBrown/80 leading-relaxed" id="modalDescription">
+     Detailed project description goes here.
+    </p>
+    <div class="pt-2 flex justify-end">
+     <button class="px-5 py-2.5 rounded-xl bg-rosePink text-white font-bold text-xs shadow-sm" onclick="closeModal()">
+      Close Window
+     </button>
+    </div>
+   </div>
+  </div>
+  <script src="js/script.js"></script>
+ </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   My Video &mdash; Teha's Space
+  </title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts: Fredoka & Quicksand for a professional yet cute vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <script>
+   tailwind.config = { theme: { extend: { colors: { cream: '#FFF9F2', dustyPink: '#E8A0BF', lavender: '#DCD6F7', darkBrown: '#44333D', rosePink: '#D96C9D', softPinkBg: '#FDF0F5', accentYellow: '#FFE5AD' }, fontFamily: { fredoka: ['Fredoka', 'sans-serif'], quicksand: ['Quicksand', 'sans-serif'], }, 
+   boxShadow: { 'cute': '0 10px 25px -5px rgba(217, 108, 157, 0.15), 0 8px 10px -6px rgba(220, 214, 247, 0.2)', 'cute-hover': '0 20px 30px -10px rgba(217, 108, 157, 0.3), 0 10px 15px -5px rgba(232, 160, 191, 0.4)', 'pop': '4px 4px 0px 0px #44333D', 'pop-hover': '6px 6px 0px 0px #44333D', } } } }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+ </head>
+ <body class="min-h-screen flex flex-col justify-between selection:bg-dustyPink selection:text-white">
+  <div class="bg-gradient-to-r from-dustyPink via-rosePink to-lavender text-white text-xs sm:text-sm font-medium py-1.5 px-4 text-center tracking-wide shadow-sm flex items-center justify-center gap-2">
+   <span class="animate-bounce">
+   </span>
+   Welcome to Teha's Digital Space! 
+   <span class="bg-white/20 px-2 py-0.5 rounded-full text-[11px] font-semibold hidden sm:inline-block">
+    2026 Edition
+   </span>
+  </div>
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b-2 border-dustyPink/20 transition-all duration-300">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+     <!-- Logo / Brand -->
+     <a class="flex items-center gap-3 group" href="index.html">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rosePink to-dustyPink flex items-center justify-center text-white text-xl shadow-cute transition-transform group-hover:scale-110 group-hover:rotate-6">
+       <i class="fa-solid font-bold fa-sparkles">
+       </i>
+      </div>
+      <div>
+       <span class="font-heading text-xl font-bold tracking-tight text-darkBrown group-hover:text-rosePink transition-colors">
+        Teha's Space
+       </span>
+       <span class="text-xs text-rosePink/80 font-bold block -mt-1 tracking-wider uppercase">
+        Portfolio
+       </span>
+      </div>
+     </a>
+     <!-- Desktop Navigation Menu -->
+     <nav class="hidden md:flex items-center gap-1.5 bg-white/80 p-1.5 rounded-full border-2 border-dustyPink/30 shadow-sm">
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-rosePink bg-softPinkBg shadow-sm" href="index.html" id="nav-homepage">
+       <i class="fa-solid fa-house mr-1.5 text-xs">
+       </i>
+       Home
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="biodata.html" id="nav-biodata">
+       <i class="fa-solid fa-user-heart mr-1.5 text-xs">
+       </i>
+       My Biodata
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="portfolio.html" id="nav-portfolio">
+       <i class="fa-solid fa-folder-open mr-1.5 text-xs">
+       </i>
+       My Portfolio
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-rosePink bg-softPinkBg shadow-sm" href="video.html" id="nav-video">
+       <i class="fa-solid fa-circle-play mr-1.5 text-xs">
+       </i>
+       My Video
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="comments.html" id="nav-comments">
+       <i class="fa-solid fa-comments mr-1.5 text-xs">
+       </i>
+       Your Comments
+      </a>
+     </nav>
+     <!-- Right Action Button & Mobile Menu Toggle -->
+     <div class="flex items-center gap-2">
+      <!-- Code View Toggle Button for Assignment Reviewers -->
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2.5 rounded-xl bg-white text-darkBrown border-2 border-dustyPink/30 hover:bg-softPinkBg focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+       <i class="fa-solid fa-bars text-lg" id="menu-icon">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- Mobile Navigation Drawer -->
+   <div class="hidden md:hidden bg-cream border-b-2 border-dustyPink/30 px-4 pt-2 pb-6 space-y-2 shadow-lg" id="mobile-menu">
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-rosePink bg-softPinkBg" href="index.html">
+     <i class="fa-solid fa-house text-rosePink w-6">
+     </i>
+     Homepage
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="biodata.html">
+     <i class="fa-solid fa-id-card text-rosePink w-6">
+     </i>
+     My Biodata &amp; Timetable
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="portfolio.html">
+     <i class="fa-solid fa-briefcase text-rosePink w-6">
+     </i>
+     My Portfolio
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-rosePink bg-softPinkBg" href="video.html">
+     <i class="fa-solid fa-video text-rosePink w-6">
+     </i>
+     My Video
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="comments.html">
+     <i class="fa-solid fa-comment-dots text-rosePink w-6">
+     </i>
+     Your Comments
+    </a>
+   </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+  
+   <section class="" id="page-video">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+     <span class="px-3 py-1 rounded-full bg-softPinkBg text-rosePink font-bold text-xs uppercase tracking-widest">
+        University Highlights
+     </span>
+     <h2 class="text-3xl sm:text-4xl font-bold text-darkBrown mt-2">
+      My University Journey Video
+     </h2>
+     <p class="text-sm text-darkBrown/75 mt-1">
+        Explore my university journey through the programmes, events, and activities I have participated in.     
+    </p>
+    </div>
+    <!-- Video Player Container Card -->
+<div class="max-w-3xl mx-auto bg-white p-4 sm:p-6 rounded-3xl border-2 border-dustyPink/40 shadow-cute">
+    <!-- Video Screen Wrapper -->
+    <div id="videoFrame" class="relative rounded-2xl overflow-hidden bg-darkBrown text-white aspect-video flex items-center justify-center border-2 border-dustyPink/30 group">
+
+        <!-- Video Element -->
+        <video id="showcaseVideo"
+               src="video/tehaslife.mov"
+               poster="image/tumbnail.jpg"
+               class="w-full h-full object-cover"
+               playsinline
+               preload="metadata">
+        </video>
+
+        <!-- Overlay Controls -->
+        <div class="absolute inset-0 bg-gradient-to-t from-darkBrown/80 via-transparent to-transparent flex flex-col justify-between p-4 opacity-95 hover:opacity-100 transition-opacity">
+            <div class="flex justify-between items-center">
+                <span class="bg-rosePink/90 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                    <span id="statusDot" class="w-2 h-2 rounded-full bg-white"></span>
+                    <span id="videoStatusLabel">Showcase Video</span>
+                </span>
+                <span id="videoTime" class="text-xs font-mono bg-black/40 px-2 py-1 rounded">
+                    00:00 / 00:00
+                </span>
+            </div>
+
+            <!-- Center Play / Pause Button -->
+            <div class="self-center">
+                <button type="button"
+                        class="w-16 h-16 rounded-full bg-rosePink text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform"
+                        id="videoPlayBtn"
+                        onclick="toggleShowcaseVideo()">
+                    <i class="fa-solid fa-play" id="playIcon"></i>
+                </button>
+            </div>
+
+            <!-- Bottom Controls -->
+            <div class="space-y-2">
+                <!-- Clickable Progress Bar -->
+                <div class="w-full h-1.5 bg-white/30 rounded-full overflow-hidden cursor-pointer" onclick="seekShowcaseVideo(event)">
+                    <div class="h-full bg-rosePink w-0 transition-all duration-150" id="videoProgress"></div>
+                </div>
+
+                <div class="flex justify-between items-center text-xs font-medium">
+                    <span>
+                        Intro Video &mdash; Teha's Digital Showcase
+                    </span>
+                    <div class="flex items-center gap-3">
+                        <button type="button" onclick="toggleMuteVideo()" aria-label="Toggle Mute">
+                            <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                        </button>
+                        <button type="button" onclick="toggleVideoFullscreen()" aria-label="Toggle Fullscreen">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- Video Transcript & Highlights -->
+     <div class="mt-6 p-5 rounded-2xl bg-cream border border-dustyPink/30 space-y-3">
+      <h4 class="font-heading font-bold text-darkBrown text-base flex items-center gap-2">
+       <i class="fa-solid fa-file-lines text-rosePink">
+       </i>
+       Video Transcript &amp; Summary
+      </h4>
+      <p class="text-xs text-darkBrown/80 leading-relaxed">
+        This video highlights my journey and experiences throughout my university life, featuring the various programmes, events, and activities I have been involved in. 
+        From student leadership and programme coordination to volunteering and university events, each experience has contributed to my personal growth, strengthened my teamwork skills, and shaped my journey as a university student.      
+    </p>
+      <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-semibold text-rosePink">
+       <span class="bg-white px-2.5 py-1 rounded-lg border border-dustyPink/30">
+        #UniversityJourney
+       </span>
+       <span class="bg-white px-2.5 py-1 rounded-lg border border-dustyPink/30">
+        #ProgrammesAndExperiences
+       </span>
+       <span class="bg-white px-2.5 py-1 rounded-lg border border-dustyPink/30">
+        #CampusLife
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+  
+   
+  </main>
+  <footer class="bg-white border-t-2 border-dustyPink/20 mt-16 py-8">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Left Side: Logo + Title Description -->
+        <div class="flex items-center gap-4 text-center sm:text-left">
+            <!-- UMS Logo Image -->
+            <img src="image\ums.jpeg" class="w-12 h-12 object-contain">
+            
+        <div>
+         <p class="font-heading font-bold text-darkBrown text-base"> Teha's Digital Space </p>
+     <p class="text-xs text-darkBrown/60"> Designed &amp; Coded for Personal Page Development &bull; Multimedia Web Programming</p>
+            </div>
+        </div>
+    <div class="flex items-center gap-3">
+    
+    <!-- 1. LinkedIn Link -->
+    <a class="w-9 h-9 rounded-full bg-softPinkBg text-rosePink flex items-center justify-center hover:bg-rosePink hover:text-white transition-colors" href="https://www.linkedin.com/in/nur-fatihah-binti-mustari-4a1b8a414?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in text-sm"></i>
+    </a>
+
+    <!-- 2. Instagram Link -->
+    <a class="w-9 h-9 rounded-full bg-lavender/50 text-purple-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors" href="https://www.instagram.com/pingkekosmos?exln=MXFzbTNwZ3Y5a244Zw%3D%3D&utm_source=qr" target="_blank" title="Instagram">
+        <i class="fa-brands fa-instagram text-sm"></i>
+    </a>
+
+    <!-- 3. Direct Email Link -->
+    <a class="w-9 h-9 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-colors" href="mailto:nur_fatihah_bi24@iluv.ums.edu.my" title="Email Me">
+        <i class="fa-solid fa-envelope text-sm"></i>
+    </a>
+
+</div>
+   </div>
+  </footer>
+  <div class="fixed inset-0 bg-darkBrown/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="projectModal">
+   <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full border-2 border-dustyPink shadow-2xl space-y-4 relative transform transition-all">
+    <button class="absolute top-4 right-4 text-darkBrown/50 hover:text-rosePink text-lg" onclick="closeModal()">
+     <i class="fa-solid fa-xmark">
+     </i>
+    </button>
+    <h3 class="font-heading text-2xl font-bold text-darkBrown" id="modalTitle">
+     Project Title
+    </h3>
+    <p class="text-xs sm:text-sm text-darkBrown/80 leading-relaxed" id="modalDescription">
+     Detailed project description goes here.
+    </p>
+    <div class="pt-2 flex justify-end">
+     <button class="px-5 py-2.5 rounded-xl bg-rosePink text-white font-bold text-xs shadow-sm" onclick="closeModal()">
+      Close Window
+     </button>
+    </div>
+   </div>
+  </div>
+  <script src="js/script.js"></script>
+ </body>
+</html>

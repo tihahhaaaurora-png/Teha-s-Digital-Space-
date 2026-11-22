@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   My Portfolio &mdash; Teha's Space
+  </title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts: Fredoka & Quicksand for a professional yet cute vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <script>
+   tailwind.config = { theme: { extend: { colors: { cream: '#FFF9F2', dustyPink: '#E8A0BF', lavender: '#DCD6F7', darkBrown: '#44333D', rosePink: '#D96C9D', softPinkBg: '#FDF0F5', accentYellow: '#FFE5AD' }, fontFamily: { fredoka: ['Fredoka', 'sans-serif'], quicksand: ['Quicksand', 'sans-serif'], }, 
+   boxShadow: { 'cute': '0 10px 25px -5px rgba(217, 108, 157, 0.15), 0 8px 10px -6px rgba(220, 214, 247, 0.2)', 'cute-hover': '0 20px 30px -10px rgba(217, 108, 157, 0.3), 0 10px 15px -5px rgba(232, 160, 191, 0.4)', 'pop': '4px 4px 0px 0px #44333D', 'pop-hover': '6px 6px 0px 0px #44333D', } } } }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+ </head>
+ <body class="min-h-screen flex flex-col justify-between selection:bg-dustyPink selection:text-white">
+  <div class="bg-gradient-to-r from-dustyPink via-rosePink to-lavender text-white text-xs sm:text-sm font-medium py-1.5 px-4 text-center tracking-wide shadow-sm flex items-center justify-center gap-2">
+   <span class="animate-bounce">
+   </span>
+   Welcome to Teha's Digital Space!
+   <span class="bg-white/20 px-2 py-0.5 rounded-full text-[11px] font-semibold hidden sm:inline-block">
+    2026 Edition
+   </span>
+  </div>
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b-2 border-dustyPink/20 transition-all duration-300">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+     <!-- Logo / Brand -->
+     <a class="flex items-center gap-3 group" href="index.html">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rosePink to-dustyPink flex items-center justify-center text-white text-xl shadow-cute transition-transform group-hover:scale-110 group-hover:rotate-6">
+       <i class="fa-solid font-bold fa-sparkles">
+       </i>
+      </div>
+      <div>
+       <span class="font-heading text-xl font-bold tracking-tight text-darkBrown group-hover:text-rosePink transition-colors">
+        Teha's Space
+       </span>
+       <span class="text-xs text-rosePink/80 font-bold block -mt-1 tracking-wider uppercase">
+        Portfolio
+       </span>
+      </div>
+     </a>
+     <!-- Desktop Navigation Menu -->
+     <nav class="hidden md:flex items-center gap-1.5 bg-white/80 p-1.5 rounded-full border-2 border-dustyPink/30 shadow-sm">
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-rosePink bg-softPinkBg shadow-sm" href="index.html" id="nav-homepage">
+       <i class="fa-solid fa-house mr-1.5 text-xs">
+       </i>
+       Home
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="biodata.html" id="nav-biodata">
+       <i class="fa-solid fa-user-heart mr-1.5 text-xs">
+       </i>
+       My Biodata
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-rosePink bg-softPinkBg shadow-sm" href="portfolio.html" id="nav-portfolio">
+       <i class="fa-solid fa-folder-open mr-1.5 text-xs">
+       </i>
+       My Portfolio
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="video.html" id="nav-video">
+       <i class="fa-solid fa-circle-play mr-1.5 text-xs">
+       </i>
+       My Video
+      </a>
+      <a class="nav-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 text-darkBrown hover:text-rosePink hover:bg-softPinkBg" href="comments.html" id="nav-comments">
+       <i class="fa-solid fa-comments mr-1.5 text-xs">
+       </i>
+       Your Comments
+      </a>
+     </nav>
+     <!-- Right Action Button & Mobile Menu Toggle -->
+     <div class="flex items-center gap-2">
+      <!-- Code View Toggle Button for Assignment Reviewers -->
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2.5 rounded-xl bg-white text-darkBrown border-2 border-dustyPink/30 hover:bg-softPinkBg focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+       <i class="fa-solid fa-bars text-lg" id="menu-icon">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- Mobile Navigation Drawer -->
+   <div class="hidden md:hidden bg-cream border-b-2 border-dustyPink/30 px-4 pt-2 pb-6 space-y-2 shadow-lg" id="mobile-menu">
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-rosePink bg-softPinkBg" href="index.html">
+     <i class="fa-solid fa-house text-rosePink w-6">
+     </i>
+     Homepage
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="biodata.html">
+     <i class="fa-solid fa-id-card text-rosePink w-6">
+     </i>
+     My Biodata &amp; Timetable
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-rosePink bg-softPinkBg" href="portfolio.html">
+     <i class="fa-solid fa-briefcase text-rosePink w-6">
+     </i>
+     My Portfolio
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="video.html">
+     <i class="fa-solid fa-video text-rosePink w-6">
+     </i>
+     My Video
+    </a>
+    <a class="mobile-nav-btn w-full text-left px-4 py-3 rounded-2xl font-bold flex items-center gap-3 text-darkBrown hover:bg-softPinkBg" href="comments.html">
+     <i class="fa-solid fa-comment-dots text-rosePink w-6">
+     </i>
+     Your Comments
+    </a>
+   </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+ 
+   <section class="" id="page-portfolio">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+     <span class="px-3 py-1 rounded-full bg-softPinkBg text-rosePink font-bold text-xs uppercase tracking-widest">
+      My Showcase
+     </span>
+     <h2 class="text-3xl sm:text-4xl font-bold text-darkBrown mt-2">
+      Projects &amp; Achievements
+     </h2>
+     <p class="text-sm text-darkBrown/75 mt-1">
+      A collection of my academic projects, digital creations and achievements developed using various creative and technical tools throughout my studies.
+     </p>
+    </div>
+
+<!-- PORTFOLIO SHOWCASE SECTION -->
+
+<!-- ROW 1: FIRST THREE PROJECT CARDS -->
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+    <!-- CARD 1: 3D MODELING AND ANIMATION -->
+    <div class="bg-white rounded-3xl border-2 border-dustyPink/40 overflow-hidden shadow-cute hover:shadow-cute-hover transition-all duration-300 flex flex-col justify-between group">
+
+        <div>
+
+            <div class="h-48 bg-softPinkBg relative overflow-hidden flex items-center justify-center">
+
+                <img src="image\blender.jpeg"
+                     alt="3D Modeling and Animation"
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-rosePink border border-dustyPink/40">
+                    3D / Blender
+                </span>
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-heading text-xl font-bold text-darkBrown group-hover:text-rosePink transition-colors">
+                    3D Modeling and Animation
+                </h3>
+
+                <p class="text-xs text-darkBrown/75 mt-2 leading-relaxed">
+                    Showcase of interactive 3D assets, custom UV mappings, character animations, and AR tracking projects.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-cream">
+
+            <span class="text-[11px] font-bold text-rosePink">
+                View Projects &amp; Links
+            </span>
+            <button
+  class="px-3.5 py-1.5 rounded-xl bg-softPinkBg text-rosePink text-xs font-bold hover:bg-rosePink hover:text-white transition-colors"
+  onclick="openModal(
+    '3D Modeling and Animation',
+    '<div class=&quot;space-y-3 text-left&quot;>' +
+      '<div>' +
+        '<p class=&quot;font-bold text-darkBrown&quot;>Animation Project</p>' +
+        '<div class=&quot;flex flex-col gap-1 mt-1&quot;>' +
+          '<a href=&quot;https://youtu.be/hB3LaHnXtrg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline hover:opacity-80&quot;>Link 1: Tutorial Assignment (YouTube)</a>' +
+          '<a href=&quot;https://youtu.be/mLkQvjjfACQ&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline hover:opacity-80&quot;>Link 2: Individual Assignment (YouTube)</a>' +
+          '<a href=&quot;https://youtu.be/4e7aPzwYqv4&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline hover:opacity-80&quot;>Link 3: Group Assignment (YouTube)</a>' +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<p class=&quot;font-bold text-darkBrown&quot;>AR Assignment</p>' +
+        '<div class=&quot;flex flex-col gap-1 mt-1&quot;>' +
+          '<a href=&quot;https://youtu.be/ZZtGY5_W_Vg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline hover:opacity-80&quot;>Link 1: Tutorial 4 (YouTube)</a>' +
+          '<a href=&quot;https://youtu.be/I6OrqW1xFtA&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline hover:opacity-80&quot;>Link 2: Tutorial 3 (YouTube)</a>' +
+          '<a href=&quot;https://youtu.be/W_wzgF4VzGU&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline hover:opacity-80&quot;>Link 3: Tutorial 2 (YouTube)</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  )">
+  Details
+</button>
+        </div>
+
+    </div>
+
+    <!-- CARD 2: WEB DEVELOPMENT AND PROGRAMMING -->
+
+    <div class="bg-white rounded-3xl border-2 border-lavender/70 overflow-hidden shadow-cute hover:shadow-cute-hover transition-all duration-300 flex flex-col justify-between group">
+
+        <div>
+
+            <div class="h-48 bg-lavender/30 relative overflow-hidden flex items-center justify-center">
+
+                <img src="image\coding.jpeg"
+                     alt="Web Development and Programming"
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-purple-700 border border-lavender">
+                    HTML / JS
+                </span>
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-heading text-xl font-bold text-darkBrown group-hover:text-purple-700 transition-colors">
+                    Web Development &amp; Programming
+                </h3>
+
+                <p class="text-xs text-darkBrown/75 mt-2 leading-relaxed">
+                    Interactive web apps, responsive 5-page portfolio portals, JavaScript logic, and dynamic UI components.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-cream">
+
+            <span class="text-[11px] font-bold text-purple-600">
+                View Projects &amp; Links
+            </span>
+
+            <button class="px-3.5 py-1.5 rounded-xl bg-lavender/40 text-purple-700 text-xs font-bold hover:bg-purple-600 hover:text-white transition-colors"
+            onclick="openModal(
+                'Web Development &amp; Programming',
+                'Object Oriented Programming (PDF): <a href=&quot;pdfs/Fitness Membership System Report.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-purple-700 underline font-bold&quot;>Open PDF</a> <br>'+
+               'Computer Graphic (PDF): <a href=&quot;pdfs/IM32303-LAB TASK 1.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-purple-700 underline font-bold&quot;>Open PDF</a>' +
+               ' | ' +
+               '<a href=&quot;https://youtu.be/y-al90jkpbo?si=WytF-aPjOHgSIJtp&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-purple-700 underline font-bold&quot;>Lab Task 1 (YouTube)</a>'
+                )">
+                Details
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3: DATA MANAGEMENT AND ANALYTICS -->
+
+    <div class="bg-white rounded-3xl border-2 border-amber-200 overflow-hidden shadow-cute hover:shadow-cute-hover transition-all duration-300 flex flex-col justify-between group">
+
+    <div>
+
+        <div class="h-48 bg-amber-50 relative overflow-hidden flex items-center justify-center">
+
+            <img src="image/database.png"
+                 alt="Data Management and Analytics"
+                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+
+            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-800 border border-amber-200">
+                DBMS / SQL
+            </span>
+
+        </div>
+
+        <div class="p-6">
+
+            <h3 class="font-heading text-xl font-bold text-darkBrown group-hover:text-amber-700 transition-colors">
+                Data Management &amp; Analytics
+            </h3>
+
+            <p class="text-xs text-darkBrown/75 mt-2 leading-relaxed">
+                Database schemas, system analysis blueprints, entity-relationship models, and data organization assignments.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-cream">
+
+        <span class="text-[11px] font-bold text-amber-700">
+            View Projects &amp; Links
+        </span>
+
+        <button class="px-3.5 py-1.5 rounded-xl bg-amber-100 text-amber-900 text-xs font-bold hover:bg-amber-900 hover:text-white transition-colors"
+        onclick="openModal(
+            'Data Management &amp; Analytics',
+            'Database Management System (PDF): <a href=&quot;pdfs/Assignment 2.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-amber-700 hover:text-amber-900 underline font-bold&quot;>Open PDF</a> <br>'+
+            'Big Data (PDF): <a href=&quot;pdfs/Group Assigment.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-amber-700 hover:text-amber-900 underline font-bold&quot;>Open PDF</a>' 
+            )">
+            Details
+        </button>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+<!-- ROW 2: TWO CENTRED PROJECT CARDS -->
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-center gap-8 mt-8">
+
+
+    <!-- CARD 4: MULTIMEDIA EDITING AND GRAPHIC DESIGN -->
+    <div class="bg-white rounded-3xl border-2 border-dustyPink/40 overflow-hidden shadow-cute hover:shadow-cute-hover transition-all duration-300 flex flex-col justify-between group w-full lg:w-[calc((100%-4rem)/3)]">
+
+        <div>
+
+            <div class="h-48 bg-softPinkBg relative overflow-hidden flex items-center justify-center">
+
+                <img src="image/editors.jpeg"
+                     alt="Multimedia Editing and Graphic Design"
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-rosePink border border-dustyPink/40">
+                    Adobe / Canva
+                </span>
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-heading text-xl font-bold text-darkBrown group-hover:text-rosePink transition-colors">
+                    Multimedia Editing &amp; Graphic Design
+                </h3>
+
+                <p class="text-xs text-darkBrown/75 mt-2 leading-relaxed">
+                    Video production, visual branding assets, and graphic compositions created using Adobe tools and Canva.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-cream">
+
+            <span class="text-[11px] font-bold text-rosePink">
+                View Projects &amp; Links
+            </span>
+
+            <button class="px-3.5 py-1.5 rounded-xl bg-softPinkBg text-rosePink text-xs font-bold hover:bg-rosePink hover:text-white transition-colors"
+    onclick="openModal(
+        'Multimedia Editing &amp; Graphic Design',
+        'Video Production:<br>' +
+        '<a href=&quot;https://youtu.be/oGRi0yIYamM?si=5i8O88L_j7WDT6L8&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline font-bold hover:opacity-80&quot;>FCI Ads</a><br>' +
+        '<a href=&quot;https://youtu.be/9cmKPZrS-cI?si=SFnIyCwTBn6lvkey&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline font-bold hover:opacity-80&quot;>After Effects Video 1</a><br>' +
+        '<a href=&quot;https://youtu.be/fv4l7nQ7Qlk?si=F7858sciRRyvBCyn&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline font-bold hover:opacity-80&quot;>After Effects Video 2</a><br>' +
+        '<a href=&quot;https://youtu.be/g1OvD5HIm5A?si=jynvRA_m7rrF6NJB&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline font-bold hover:opacity-80&quot;>Adobe Premiere Pro Video</a><br><br>' +
+        'Graphic Design Portfolio: <br>' +
+        '<a href=&quot;pdfs/Digital Book Report.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline font-bold hover:opacity-80&quot;>View Portfolio</a>' +
+        ' | ' +
+        '<a href=&quot;https://indd.adobe.com/view/24775564-ac61-4f22-bd5f-ba1aa345909d&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-rosePink underline font-bold hover:opacity-80&quot;>Labuan Culture Flipbook</a><br><br>' 
+    )">
+    Details
+</button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CARD 5: IoT DEVELOPMENT -->
+    <div class="bg-white rounded-3xl border-2 border-amber-200 overflow-hidden shadow-cute hover:shadow-cute-hover transition-all duration-300 flex flex-col justify-between group w-full lg:w-[calc((100%-4rem)/3)]">
+
+        <div>
+
+            <div class="h-48 bg-amber-50 relative overflow-hidden flex items-center justify-center">
+
+                <img src="image/iot.jpeg"
+                     alt="IoT Development - Smart BreediSence"
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-800 border border-amber-200">
+                    Arduino / IoT
+                </span>
+
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="font-heading text-xl font-bold text-darkBrown group-hover:text-amber-700 transition-colors">
+                    IoT Development
+                </h3>
+
+                <p class="text-xs text-darkBrown/75 mt-2 leading-relaxed">
+                    Smart BreediSence, an IoT-based system designed to help prevent mosquito breeding by monitoring environmental conditions using Arduino IDE.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-cream">
+
+            <span class="text-[11px] font-bold text-amber-700">
+                View Projects &amp; Links
+            </span>
+
+           <button class="px-3.5 py-1.5 rounded-xl bg-amber-100 text-amber-800 text-xs font-bold hover:bg-amber-500 hover:text-white transition-colors"
+           onclick="openModal(
+            'IoT Development',
+            '<p class=&quot;text-xs text-darkBrown/80 leading-relaxed mb-3&quot;>Smart BreediSence: An IoT-based mosquito breeding prevention system developed using Arduino IDE.</p>' +
+            '<p class=&quot;text-xs mb-4&quot;><a href=&quot;pdfs/IOT PROJECT.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;text-amber-700 hover:text-amber-900 underline font-bold&quot;>Smart BreediSence Report (PDF)</a></p>' +
+            '<div class=&quot;grid grid-cols-3 gap-3&quot;>' +
+            '<img src=&quot;image/iot1.jpg&quot; alt=&quot;Smart BreediSence Photo 1&quot; class=&quot;w-full h-28 object-cover rounded-2xl border border-amber-200&quot;>' +
+            '<img src=&quot;image/iot2.jpg&quot; alt=&quot;Smart BreediSence Photo 2&quot; class=&quot;w-full h-28 object-cover rounded-2xl border border-amber-200&quot;>' +
+            '<img src=&quot;image/iot3.jpg&quot; alt=&quot;Smart BreediSence Photo 3&quot; class=&quot;w-full h-28 object-cover rounded-2xl border border-amber-200&quot;>' +
+        '</div>'
+    )">
+    Details
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ROW 3: ACHIEVEMENT (HORIZONTAL CARD)       -->
+
+<div class="mt-8">
+
+    <div class="bg-white rounded-3xl border-2 border-lavender/70 overflow-hidden shadow-cute hover:shadow-cute-hover transition-all duration-300 group">
+
+        <div class="flex flex-col md:flex-row">
+
+            <!-- Achievement Image -->
+            <div class="md:w-1/3 h-48 md:h-auto md:min-h-[220px] bg-lavender/30 relative overflow-hidden flex items-center justify-center">
+
+                <img src="image/achievements.jpeg"
+                     alt="Academic and Personal Achievements"
+                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+
+                <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-purple-700 border border-lavender">
+                    Awards / Certificates
+                </span>
+
+            </div>
+
+
+            <!-- Achievement Details -->
+            <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+
+                <h3 class="font-heading text-2xl font-bold text-darkBrown group-hover:text-purple-700 transition-colors">
+                    Achievements &amp; Experiences
+                </h3>
+
+                <p class="text-sm text-darkBrown/75 mt-3 leading-relaxed">
+                    A collection of my academic achievements, leadership experiences, university programmes, volunteering activities, and certificates throughout my university journey.
+                </p>
+
+
+                <!-- Achievement Action Bar -->
+                <div class="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-cream pt-5">
+
+                    <span class="text-[11px] font-bold text-purple-600">
+                        My Journey &amp; Accomplishments
+                    </span>
+
+                    <button class="px-4 py-2 rounded-xl bg-lavender/40 text-purple-700 text-xs font-bold hover:bg-purple-600 hover:text-white transition-colors"
+    onclick="openModal(
+        'Achievements &amp; Experiences',
+        '<div class=&quot;space-y-4 text-left&quot;>' +
+
+            '<div>' +
+                '<p class=&quot;font-bold text-sm text-darkBrown mb-2&quot;>Dean’s List Award</p>' +
+                '<div class=&quot;flex gap-2.5 overflow-x-auto pb-1&quot;>' +
+                    '<img src=&quot;image/dean1.jpg&quot; alt=&quot;Dean’s List Award 1&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/dean2.jpg&quot; alt=&quot;Dean’s List Award 2&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/dean3.jpg&quot; alt=&quot;Dean’s List Award 3&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                '</div>' +
+            '</div>' +
+
+            '<div>' +
+                '<p class=&quot;font-bold text-sm text-darkBrown mb-2&quot;>Study Fresh : Fresh Body Focus Mind As Program Director</p>' +
+                '<div class=&quot;flex gap-2.5 overflow-x-auto pb-1&quot;>' +
+                    '<img src=&quot;image/sf1.jpg&quot; alt=&quot;Study Fresh 1&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/sf2.jpg&quot; alt=&quot;Study Fresh 2&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/sf3.jpg&quot; alt=&quot;Study Fresh 3&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/sf4.jpg&quot; alt=&quot;Study Fresh 4&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                '</div>' +
+            '</div>' +
+
+            '<div>' +
+                '<p class=&quot;font-bold text-sm text-darkBrown mb-2&quot;>Volunteer Activities</p>' +
+                '<div class=&quot;flex gap-2.5 overflow-x-auto pb-1&quot;>' +
+                    '<img src=&quot;image/volunteer1.jpg&quot; alt=&quot;Volunteer 1&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/volunteer2.jpg&quot; alt=&quot;Volunteer 2&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/volunteer3.jpg&quot; alt=&quot;Volunteer 3&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/volunteer4.jpg&quot; alt=&quot;Volunteer 4&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/volunteer5.jpg&quot; alt=&quot;Volunteer 5&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                '</div>' +
+            '</div>' +
+
+            '<div>' +
+                '<p class=&quot;font-bold text-sm text-darkBrown mb-2&quot;>University Programmes</p>' +
+                '<div class=&quot;flex gap-2.5 overflow-x-auto pb-1&quot;>' +
+                    '<img src=&quot;image/up1.jpg&quot; alt=&quot;Programme 1&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/up2.jpg&quot; alt=&quot;Programme 2&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/up3.jpg&quot; alt=&quot;Programme 3&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/up4.jpg&quot; alt=&quot;Programme 4&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                    '<img src=&quot;image/up5.jpg&quot; alt=&quot;Programme 5&quot; class=&quot;w-28 h-24 shrink-0 object-cover rounded-xl border border-purple-200&quot;>' +
+                '</div>' +
+            '</div>' +
+        '</div>'
+    )">
+    View Achievements
+</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+   </section>
+
+  </main>
+  <footer class="bg-white border-t-2 border-dustyPink/20 mt-16 py-8">
+   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Left Side: Logo + Title Description -->
+        <div class="flex items-center gap-4 text-center sm:text-left">
+            <!-- UMS Logo Image -->
+            <img src="image\ums.jpeg" class="w-12 h-12 object-contain">
+            
+        <div>
+         <p class="font-heading font-bold text-darkBrown text-base"> Teha's Digital Space </p>
+     <p class="text-xs text-darkBrown/60"> Designed &amp; Coded for Personal Page Development &bull; Multimedia Web Programming</p>
+            </div>
+        </div>
+    <div class="flex items-center gap-3">
+    
+    <!-- 1. LinkedIn Link -->
+    <a class="w-9 h-9 rounded-full bg-softPinkBg text-rosePink flex items-center justify-center hover:bg-rosePink hover:text-white transition-colors" href="https://www.linkedin.com/in/nur-fatihah-binti-mustari-4a1b8a414?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in text-sm"></i>
+    </a>
+
+    <!-- 2. Instagram Link -->
+    <a class="w-9 h-9 rounded-full bg-lavender/50 text-purple-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors" href="https://www.instagram.com/pingkekosmos?exln=MXFzbTNwZ3Y5a244Zw%3D%3D&utm_source=qr" target="_blank" title="Instagram">
+        <i class="fa-brands fa-instagram text-sm"></i>
+    </a>
+
+    <!-- 3. Direct Email Link -->
+    <a class="w-9 h-9 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center hover:bg-amber-500 hover:text-white transition-colors" href="mailto:nur_fatihah_bi24@iluv.ums.edu.my" title="Email Me">
+        <i class="fa-solid fa-envelope text-sm"></i>
+    </a>
+
+</div>
+   </div>
+  </footer>
+  <div class="fixed inset-0 bg-darkBrown/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="projectModal">
+   <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full border-2 border-dustyPink shadow-2xl space-y-4 relative transform transition-all">
+    <button class="absolute top-4 right-4 text-darkBrown/50 hover:text-rosePink text-lg" onclick="closeModal()">
+     <i class="fa-solid fa-xmark">
+     </i>
+    </button>
+    <h3 class="font-heading text-2xl font-bold text-darkBrown" id="modalTitle">
+     Project Title
+    </h3>
+    <p class="text-xs sm:text-sm text-darkBrown/80 leading-relaxed" id="modalDescription">
+     Detailed project description goes here.
+    </p>
+    <div class="pt-2 flex justify-end">
+     <button class="px-5 py-2.5 rounded-xl bg-rosePink text-white font-bold text-xs shadow-sm" onclick="closeModal()">
+      Close Window
+     </button>
+    </div>
+   </div>
+  </div>
+  <script src="js/script.js"></script>
+ </body>
+</html>
