@@ -115,8 +115,6 @@
    </div>
   </header>
   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-
-    
    <section class="" id="page-comments">
     <div class="text-center max-w-2xl mx-auto mb-10">
      <span class="px-3 py-1 rounded-full bg-lavender/60 text-purple-800 font-bold text-xs uppercase tracking-widest">
@@ -130,6 +128,7 @@
      </p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
      <!-- MANDATORY REQUIREMENT: FORM -->
      <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-3xl border-2 border-dustyPink/40 shadow-cute">
       <h3 class="font-heading text-xl font-bold text-darkBrown mb-1 flex items-center gap-2">
@@ -140,20 +139,26 @@
       <p class="text-xs text-darkBrown/70 mb-6">
        Fill in all fields to publish your comment instantly.
       </p>
+
       <form class="space-y-4" id="commentForm" onsubmit="handleCommentSubmit(event)">
+       <!-- Web3Forms Hidden Fields -->
+       <input type="hidden" name="access_key" value="165248a8-4e33-49a9-8ab1-f48c486b9fe2"/>
+       <input type="hidden" name="subject" value="New Guestbook Comment — Teha's Digital Space"/>
+       <input type="hidden" id="visitorRatingInput" name="rating" value="5 / 5 Stars"/>
+
        <!-- Visitor Name -->
        <div>
         <label class="block text-xs font-bold text-darkBrown uppercase tracking-wider mb-1" for="visitorName">
          Your Name *
         </label>
-        <input class="w-full px-4 py-3 rounded-2xl border-2 border-dustyPink/30 focus:border-rosePink focus:outline-none text-sm transition-colors bg-cream/40" id="visitorName" placeholder="e.g. Sarah Ahmad" required="" type="text"/>
+        <input class="w-full px-4 py-3 rounded-2xl border-2 border-dustyPink/30 focus:border-rosePink focus:outline-none text-sm transition-colors bg-cream/40" id="visitorName" name="name" placeholder="e.g. Muhammad Sazwan" required="" type="text"/>
        </div>
        <!-- Visitor Email -->
        <div>
         <label class="block text-xs font-bold text-darkBrown uppercase tracking-wider mb-1" for="visitorEmail">
          Your Email *
         </label>
-        <input class="w-full px-4 py-3 rounded-2xl border-2 border-dustyPink/30 focus:border-rosePink focus:outline-none text-sm transition-colors bg-cream/40" id="visitorEmail" placeholder="e.g. sarah@example.com" required="" type="email"/>
+        <input class="w-full px-4 py-3 rounded-2xl border-2 border-dustyPink/30 focus:border-rosePink focus:outline-none text-sm transition-colors bg-cream/40" id="visitorEmail" name="email" placeholder="e.g. sazwan@gmail.com" required="" type="email"/>
        </div>
        <!-- Rating Selector -->
        <div>
@@ -191,7 +196,7 @@
         <label class="block text-xs font-bold text-darkBrown uppercase tracking-wider mb-1" for="visitorMessage">
          Your Comments *
         </label>
-        <textarea class="w-full px-4 py-3 rounded-2xl border-2 border-dustyPink/30 focus:border-rosePink focus:outline-none text-sm transition-colors bg-cream/40" id="visitorMessage" placeholder="Type your message or project feedback here..." required="" rows="4"></textarea>
+        <textarea class="w-full px-4 py-3 rounded-2xl border-2 border-dustyPink/30 focus:border-rosePink focus:outline-none text-sm transition-colors bg-cream/40" id="visitorMessage" name="message" placeholder="Type your message or project feedback here..." required="" rows="4"></textarea>
        </div>
        <!-- Submit Button -->
        <button class="w-full py-3.5 rounded-2xl bg-rosePink text-white font-heading font-bold text-sm shadow-cute hover:shadow-cute-hover hover:bg-rosePink/90 transition-all flex items-center justify-center gap-2" type="submit">
@@ -220,6 +225,7 @@
     </div>
    </section>
   </main>
+
   <footer class="bg-white border-t-2 border-dustyPink/20 mt-16 py-8">
    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <!-- Left Side: Logo + Title Description -->
@@ -271,6 +277,8 @@
     </div>
    </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/script.js"></script>
+</body>
  </body>
 </html>
