@@ -1,6 +1,6 @@
-// SUPABASE CONFIGURATION
-const SUPABASE_URL = "https://fptgficzjkfaeafsweeg.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwdGdmaWN6amtmYWVhZnN3ZWVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUzNDM4NDMsImV4cCI6MjExMDkxOTg0M30.Yfv_W2Yzq7A54lMiBiUkBI4wooXQLQL_OKd950x4Wcs";
+// Current rating & storage global state
+let selectedRating = 5;
+const STORAGE_KEY = "teha_guestbook_comments";
 
 // Page Switch Logic (Toggles active HTML page view seamlessly)
 function switchPage(pageId) {
