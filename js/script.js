@@ -1,6 +1,7 @@
 // Current rating global state
 let selectedRating = 5;
 const STORAGE_KEY = "teha_guestbook_comments";
+const WEB3FORMS_ACCESS_KEY = "165248a8-4e33-49a9-8ab1-f48c486b9fe2";
 
 // Page Switch Logic (Toggles active HTML page view seamlessly)
 function switchPage(pageId) {
@@ -135,12 +136,12 @@ function loadSavedComments() {
     }
 }
 
-// Form Submission Handler (Live Dynamic Comment Addition + LocalStorage)
-function handleCommentSubmit(event) {
+// Form Submission Handler (Live Dynamic Comment Addition + LocalStorage + Web3Forms)
+async function handleCommentSubmit(event) {
     event.preventDefault();
-    const name = document.getElementById('visitorName').value;
-    const email = document.getElementById('visitorEmail').value;
-    const message = document.getElementById('visitorMessage').value;
+    const name = document.getElementById('visitorName').value.trim();
+    const email = document.getElementById('visitorEmail').value.trim();
+    const message = document.getElementById('visitorMessage').value.trim();
 
     const newComment = {
         name,
@@ -169,8 +170,36 @@ function handleCommentSubmit(event) {
     if (form) form.reset();
     setRating(5);
 
-    // Friendly custom message (no browser alert)
-    showToast("Thank you " + name + "! Your comment has been published.");
+    // Send notification via Web3Forms
+    let emailSent = false;
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: `New Guestbook Comment from ${name} (${newComment.rating} Stars)`,
+                from_name: "Teha's Digital Space",
+                name: name,
+                email: email,
+                rating: `${newComment.rating} / 5 Stars`,
+                message: message
+            })
+        });
+        const data = await response.json();
+        emailSent = Boolean(data.success);
+    } catch {
+        emailSent = false;
+    }
+
+    if (emailSent) {
+        showToast("Thank you " + name + "! Comment published & emailed.");
+    } else {
+        showToast("Thank you " + name + "! Comment saved (email pending/check key).");
+    }
 }
 
 // Custom Toast Notification
@@ -270,6 +299,7 @@ window.addEventListener('DOMContentLoaded', function () {
     if (!video) return;
 
     const playIcon = document.getElementById("playIcon");
+    const videoPlayBtn = document.getElementById("videoPlayBtn");
     const videoProgress = document.getElementById("videoProgress");
     const videoTime = document.getElementById("videoTime");
     const statusDot = document.getElementById("statusDot");
@@ -291,16 +321,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
     video.addEventListener("play", () => {
         if (playIcon) playIcon.className = "fa-solid fa-pause";
+        if (videoPlayBtn) videoPlayBtn.classList.add("opacity-0", "pointer-events-none");
         if (statusDot) statusDot.classList.add("animate-ping");
     });
 
     video.addEventListener("pause", () => {
         if (playIcon) playIcon.className = "fa-solid fa-play";
+        if (videoPlayBtn) videoPlayBtn.classList.remove("opacity-0", "pointer-events-none");
         if (statusDot) statusDot.classList.remove("animate-ping");
     });
 
     video.addEventListener("ended", () => {
         if (playIcon) playIcon.className = "fa-solid fa-rotate-right";
+        if (videoPlayBtn) videoPlayBtn.classList.remove("opacity-0", "pointer-events-none");
         if (statusDot) statusDot.classList.remove("animate-ping");
     });
 });
