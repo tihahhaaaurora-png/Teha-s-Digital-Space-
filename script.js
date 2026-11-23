@@ -291,6 +291,7 @@ window.addEventListener('DOMContentLoaded', function () {
     if (!video) return;
 
     const playIcon = document.getElementById("playIcon");
+    const videoPlayBtn = document.getElementById("videoPlayBtn");
     const videoProgress = document.getElementById("videoProgress");
     const videoTime = document.getElementById("videoTime");
     const statusDot = document.getElementById("statusDot");
@@ -312,16 +313,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
     video.addEventListener("play", () => {
         if (playIcon) playIcon.className = "fa-solid fa-pause";
+        if (videoPlayBtn) videoPlayBtn.classList.add("opacity-0", "pointer-events-none");
         if (statusDot) statusDot.classList.add("animate-ping");
     });
 
     video.addEventListener("pause", () => {
         if (playIcon) playIcon.className = "fa-solid fa-play";
+        if (videoPlayBtn) videoPlayBtn.classList.remove("opacity-0", "pointer-events-none");
         if (statusDot) statusDot.classList.remove("animate-ping");
     });
 
     video.addEventListener("ended", () => {
         if (playIcon) playIcon.className = "fa-solid fa-rotate-right";
+        if (videoPlayBtn) videoPlayBtn.classList.remove("opacity-0", "pointer-events-none");
         if (statusDot) statusDot.classList.remove("animate-ping");
     });
 });
